@@ -3,9 +3,9 @@ import './styleRenderMovieSchedules.css';
 
 export default function RenderMovieSchedules({ movieSchedules }) {
   return movieSchedules.map((schedule, index) => (
-    <div className="hour">
+    <div className="hour" key={index}>
       <Link to={`/assentos/${schedule.id}`}>
-        <div className="hour-options" key={index}>{schedule.name}</div>
+        <div className="hour-options">{schedule.name}</div>
       </Link>
     </div>
   ));

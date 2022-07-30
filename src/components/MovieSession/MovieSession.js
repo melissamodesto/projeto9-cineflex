@@ -11,7 +11,6 @@ export default function MovieSession() {
   const urlAPI = `https://mock-api.driven.com.br/api/v7/cineflex/movies/${id}/showtimes`;
 
   const [schedules, setSchedules] = useState(null);
-  console.log(schedules);
 
   useEffect(() => {
     const request = axios.get(urlAPI);
