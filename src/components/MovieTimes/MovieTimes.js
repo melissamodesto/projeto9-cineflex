@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./styleMovieSession.css";
+import "./styleMovieTimes.css";
 import Footer from "../Footer/Footer";
 import RenderMovieDays from "../RenderMovieDays/RenderMovieDays";
-
 
 export default function MovieSession() {
   const { id } = useParams();
