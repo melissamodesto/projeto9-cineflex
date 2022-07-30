@@ -1,0 +1,36 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.loading img {
+  width: 100px;
+  height: 100px;
+}
+
+.list-schedules {
+  margin-top: 36px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 23px;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #293845;
+  margin-bottom: 200px
+}
+
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+}
+
+
+

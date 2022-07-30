@@ -1,46 +1,43 @@
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import './styleMovieSession.css';
+import "./styleMovieSession.css";
+import Footer from "../Footer/Footer";
+import RenderMovieDays from "../RenderMovieDays/RenderMovieDays";
 
-const urlAPI = "https://mock-api.driven.com.br/api/v7/cineflex/movies/ID_DO_FILME/showtimes";
 
-function Session(session) {
-  return (
-    <Link to={`/sessions/${session.id}`}>
-      <img className="session" src={session.image} alt={session.title} />
-    </Link>
-  );
-}
+export default function MovieSession() {
+  const { id } = useParams();
+  const urlAPI = `https://mock-api.driven.com.br/api/v7/cineflex/movies/${id}/showtimes`;
 
-function ListSession() {
-  const [sessions, setSessions] = useState(null);
+  const [schedules, setSchedules] = useState(null);
+  console.log(schedules);
 
   useEffect(() => {
     const request = axios.get(urlAPI);
 
     request.then((response) => {
-      setSessions(response.data);
-      console.log(response.data);
+      setSchedules(response.data);
     });
-  }, []);
+  }, [id]);
 
-  
-  return (
-    <div className="session-list">
-      {sessions.days.map((session, index) => (
-        <Session key={index} daySession={session.day} id={session.id} />
-      ))}
-    </div>
-  );
-}
+  if (schedules === null) {
+    return (
+      <div className="loading">
+        <img src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif" />
+      </div>
+    );
+  }
 
-
-
-export default function MovieSession() {
   return (
     <>
-      <ListSession />
+      <div className="schedules">
+        <h1 className="subtitle">Selecione o horário</h1>
+        <div className="list-schedules">
+          <RenderMovieDays informationMovie={schedules.days} />
+        </div>
+      </div>
+      <Footer title={schedules.title} poster={schedules.posterURL} />
     </>
   );
 }

@@ -1,15 +1,18 @@
 * {
-  padding: 10px;
   box-sizing: border-box;
+  text-decoration: inherit;
 }
 
 body {
-    margin-top: 66px;
+  margin: 106px auto 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topo {
   width: 100%;
-  height: 66px;
+  height: 74px;
   background-color: #c3cfd9;
   position: fixed;
   right: 0;
@@ -21,16 +24,16 @@ body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 40px;
   color: #e8833a;
 }
 
-.subtitle {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
+.subtitle h1 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
 }

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MovieList from "./MovieList/MovieList";
 import MovieSession from "./MovieSession/MovieSession";
 import Header from "./Header/Header";
+import Seats from "./Seats/Seats";
 import "./assets/css/style.css";
 
 export default function App() {
@@ -11,7 +12,8 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MovieList />} />
-          <Route path="/sessions/:id" element={<MovieSession  />} />
+          <Route path="/sessao/:id" element={<MovieSession  />} />
+          <Route path="/assentos/:id" element={<Seats  />} />
         </Routes>
       </BrowserRouter>
     </>
