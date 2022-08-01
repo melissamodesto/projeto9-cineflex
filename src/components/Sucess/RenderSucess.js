@@ -10,7 +10,6 @@ export default function RenderizarSucesso({
   choiceSeats,
 }) {
 
-    console.log(movieTitle);
   return (
     <>
       <div className="main-container">
