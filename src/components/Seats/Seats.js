@@ -36,6 +36,7 @@ export default function Session() {
         "https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many",
         { ids: ids, name: event.target.nome.value, cpf: event.target.cpf.value }
       );
+      
       request.then(
         console.log(event.target.nome.value, event.target.cpf.value),
         navigate("/sucesso", {
