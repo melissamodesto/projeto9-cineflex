@@ -50,8 +50,6 @@ function List() {
   );
 }
 
-
-
 export default function MovieList() {
   return (
     <>
