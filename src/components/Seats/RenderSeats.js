@@ -1,8 +1,8 @@
 import RenderIndividualSeats from "./RenderIndividualSeats"
 
-export default function RenderSeats({assentosFilme,assentosEscolhidos}){
+export default function RenderSeats({choiceMovie,choiceSeats}){
 
-    return (assentosFilme.map(assento =>
-        <RenderIndividualSeats assento={assento} assentosEscolhidos={assentosEscolhidos}/>
+    return (choiceMovie.map((seats, index) =>
+        <RenderIndividualSeats key={index} seats={seats} choiceSeats={choiceSeats}/>
     ))
 }

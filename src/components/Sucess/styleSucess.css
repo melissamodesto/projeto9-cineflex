@@ -1,0 +1,73 @@
+.selecionado{
+    background-color: #8DD7CF;
+    border-color: #1AAE9E;
+}
+
+.disponivel{
+    background-color: #C3CFD9;
+    border-color: #7B8B99;
+}
+
+.indisponivel{
+    background-color: #FBE192;
+    border-color: #F7C52B;
+    border-radius: 1px;
+}
+
+.title-sucess{
+    color: #247A6B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.movie-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.movie-info h2 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.title-sucess h3 {
+    text-align: center;
+}
+
+
+.button {
+    width: 225px;
+    height: 42px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8833A;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 60px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button-back {
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+    margin: 10px 25px;
+}

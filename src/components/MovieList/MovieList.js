@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./styleMovieList.css";
 
+const loading = "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif";
 const urlAPI = "https://mock-api.driven.com.br/api/v7/cineflex/movies";
 
 function Movie(movie) {
@@ -14,7 +15,7 @@ function Movie(movie) {
 }
 
 function List() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
 
   useEffect(() => {
     const request = axios.get(urlAPI);
@@ -23,6 +24,17 @@ function List() {
       setMovies(response.data);
     });
   }, []);
+
+  if (movies === null) {
+    return (
+      <div className="loading">
+        <img
+          src={loading}
+          alt=""
+        />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -37,6 +49,8 @@ function List() {
     </>
   );
 }
+
+
 
 export default function MovieList() {
   return (

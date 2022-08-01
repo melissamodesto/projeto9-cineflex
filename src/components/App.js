@@ -3,6 +3,7 @@ import MovieList from "./MovieList/MovieList";
 import MovieTimes from "./MovieTimes/MovieTimes";
 import Header from "./Header/Header";
 import Seats from "./Seats/Seats";
+import Sucess from "./Sucess/Sucess";
 import "./assets/css/style.css";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<MovieList />} />
           <Route path="/sessao/:id" element={<MovieTimes  />} />
           <Route path="/assentos/:id" element={<Seats />} />
+          <Route path="/sucesso" element={<Sucess />} />
         </Routes>
       </BrowserRouter>
     </>
