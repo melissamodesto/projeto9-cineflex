@@ -5,15 +5,20 @@ import "./styleMovieTimes.css";
 import Footer from "../Footer/Footer";
 import RenderMovieDays from "../RenderMovieDays/RenderMovieDays";
 
-const loading = "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif";
+const loading =
+  "https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-7.jpg";
 
-export default function MovieSession() {
+export default function MovieSession({ setScreenCallback }) {
   const { id } = useParams();
   const urlAPI = `https://mock-api.driven.com.br/api/v7/cineflex/movies/${id}/showtimes`;
 
   const [schedules, setSchedules] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
+    setScreenCallback(2);
+
     const request = axios.get(urlAPI);
 
     request.then((response) => {

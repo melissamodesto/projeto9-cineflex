@@ -5,14 +5,15 @@ import RenderSeats from "./RenderSeats";
 import "./styleRenderSeats.css";
 import "../Sucess/styleSucess.css";
 
-const loading = "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif";
+const loading =
+  "https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-7.jpg";
 const seats = [
   { id: 101, numero: 1 },
   { id: 103, numero: 3 },
   { id: 105, numero: 5 },
 ];
 
-export default function Sessao() {
+export default function Session() {
   const { id } = useParams();
   const [items, setItems] = useState(null);
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ export default function Sessao() {
   const [ids, setIds] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setIds(choiceSeats.map((seats) => seats.id));
   }, [choiceSeats]);
 
@@ -28,13 +30,14 @@ export default function Sessao() {
     if (choiceSeats.length === 0) {
       alert("Por favor, escolha os assentos desejados.");
     } else if (event.target.cpf.value.length < 11) {
-      alert("Você deve digitar um CPF de 11 dígitos");
+      alert("Digitar CPF com 11 dígitos");
     } else {
       const request = axios.post(
-        `https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many`,
+        "https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many",
         { ids: ids, name: event.target.nome.value, cpf: event.target.cpf.value }
       );
       request.then(
+        console.log(event.target.nome.value, event.target.cpf.value),
         navigate("/sucesso", {
           state: {
             nome: event.target.nome.value,
@@ -50,21 +53,19 @@ export default function Sessao() {
   }
 
   useEffect(() => {
+
     const request = axios.get(
       `https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${id}/seats`
     );
-    request.then((resp) => {
-      setItems(resp.data);
+    request.then((response) => {
+      setItems(response.data);
     });
   }, [id]);
 
   if (items === null) {
     return (
       <div className="loading">
-        <img
-          src={loading}
-          alt=""
-        />
+        <img src={loading} alt="" />
       </div>
     );
   }

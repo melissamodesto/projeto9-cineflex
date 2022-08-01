@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import RenderSucessSeats from "./RenderSucessSeats";
 
-export default function RenderizarSucesso({
+export default function RenderSucess({
   nome,
   cpf,
   movieTitle,

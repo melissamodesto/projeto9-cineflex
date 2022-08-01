@@ -37,6 +37,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+  font-weight: 500;
 }
 
 .movie-title div {

@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./styleMovieList.css";
 
-const loading = "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif";
+const loading =
+  "https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-7.jpg";
 const urlAPI = "https://mock-api.driven.com.br/api/v7/cineflex/movies";
 
 function Movie(movie) {
+
+  
+
   return (
     <Link to={`/sessao/${movie.id}`}>
       <img className="movie" src={movie.image} alt={movie.title} />
@@ -18,6 +22,7 @@ function List() {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const request = axios.get(urlAPI);
 
     request.then((response) => {
@@ -28,10 +33,7 @@ function List() {
   if (movies === null) {
     return (
       <div className="loading">
-        <img
-          src={loading}
-          alt=""
-        />
+        <img src={loading} alt="" />
       </div>
     );
   }
@@ -50,7 +52,12 @@ function List() {
   );
 }
 
-export default function MovieList() {
+export default function MovieList({ setScreenCallback }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setScreenCallback(1);
+  });
+  
   return (
     <>
       <List />

@@ -27,6 +27,7 @@ body {
   font-size: 20px;
   line-height: 40px;
   color: #e8833a;
+
 }
 
 .subtitle h1 {
@@ -36,4 +37,30 @@ body {
   font-size: 26px;
   line-height: 30px;
   text-align: center;
+}
+
+.back-button {
+ 
+  background-color: #c3cfd9;
+  position: absolute;
+  left: 26px;
+  top: calc(50% - (35px/2));
+  border-radius: 50%;
+  border: none;
+  opacity: 0.7;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+ion-icon {
+  width: 35px;
+  height: 35px;
+  color: #e8833a;
 }
