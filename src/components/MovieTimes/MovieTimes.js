@@ -5,6 +5,8 @@ import "./styleMovieTimes.css";
 import Footer from "../Footer/Footer";
 import RenderMovieDays from "../RenderMovieDays/RenderMovieDays";
 
+const loading = "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif";
+
 export default function MovieSession() {
   const { id } = useParams();
   const urlAPI = `https://mock-api.driven.com.br/api/v7/cineflex/movies/${id}/showtimes`;
@@ -22,7 +24,7 @@ export default function MovieSession() {
   if (schedules === null) {
     return (
       <div className="loading">
-        <img src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif" />
+        <img src={loading} />
       </div>
     );
   }
